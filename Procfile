@@ -1,1 +1,1 @@
-web: python sculpture-webapp/sculpture.py
+web: gunicorn sculpture-webapp.sculpture:app
