@@ -1,0 +1,16 @@
+These should be installed:
+  python 2.7
+  (if you don't have "pip", you mean need to install it)
+  virtualenv
+
+Getting setup:
+  cd sculpture-webapp
+  virtualenv venv --distribute
+  source venv/bin/activate
+  pip install Flask gunicorn
+
+Running webapp locally:
+  (while in the sculpture-webapp directory)
+  source venv/bin/activate
+  python sculpture.py
+  (and go to the URL they output!)
