@@ -2,6 +2,7 @@ import os
 from flask import Flask, Response, render_template, send_file, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from tempfile import NamedTemporaryFile
+import random
 
 from lib import cloud_gen
 
@@ -27,6 +28,8 @@ def download_stl():
 
 @app.route('/examples/hood/<n>')
 def example_hood(n):
+  if n == "random":
+    n = random.randint(0,10)
   n = str(int(n))
   fn = "hood-" + n + ".scad"
   path = "/home/ec2-user/misc-data/examples/" + fn
