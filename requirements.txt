@@ -6,5 +6,3 @@ euclid==0.01
 gunicorn==0.17.2
 solidpython==0.1.1
 wsgiref==0.1.2
-numpy
-scipy
