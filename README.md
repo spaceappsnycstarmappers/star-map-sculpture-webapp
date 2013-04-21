@@ -1,4 +1,4 @@
-http://spaceappsnycstarmappers.herokuapp.com/
+http://ec2-54-224-206-164.compute-1.amazonaws.com/
 
 https://github.com/spaceappsnycstarmappers
 

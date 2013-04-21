@@ -6,10 +6,9 @@
 from random import *
 from solid import * # SolidPython
 
-### NOTE: commenting these out until we can install them successfully
-# import numpy
-# import scipy
-# from scipy import spatial
+#import numpy
+#import scipy
+#from scipy import spatial
 
 # the mock data is normalized...let's make this bigger
 # this is just the coordinate scale at the moment

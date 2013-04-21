@@ -6,7 +6,8 @@ from tempfile import NamedTemporaryFile
 from lib import cloud_gen
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+database_url = "mysql://starmap:starmapnyc@starmapdb.c4iz2nkqcg5a.us-east-1.rds.amazonaws.com/starmap"
+app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 db = SQLAlchemy(app)
 
 @app.route('/', methods=['GET'])
@@ -23,6 +24,13 @@ def download_stl():
 	cloud_gen.render_scad(stars, f, output_style)
 	f.close()
 	return send_file(f.name, as_attachment=True, attachment_filename="starmap.scad", mimetype='application/octet-stream')
+
+@app.route('/examples/hood/<n>')
+def example_hood(n):
+  n = str(int(n))
+  fn = "hood-" + n + ".scad"
+  path = "/home/ec2-user/misc-data/examples/" + fn
+  return send_file(path, as_attachment=True, attachment_filename=fn, mimetype='application/octet-stream')
 
 if __name__ == "__main__":
     app.run(debug=True)
